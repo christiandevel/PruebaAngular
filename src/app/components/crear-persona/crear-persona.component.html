@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{titulo}}</span>
+                    <form [formGroup]="personasForm" (ngSubmit)="agregarPersona()">
+                        <div class="mb-3 ">
+                            <input type="number " formControlName="Documento" class="form-control " placeholder="Documento ">
+                            <div *ngIf="personasForm.get('Documento')?.hasError('required') && personasForm.get('Documento')?.touched" class="form-text text-danger text-start">El documento <strong>es Obligario</strong>.</div>
+                        </div>
+                        <div class="mb-3 ">
+                            <input type="text " formControlName="Nombres" class="form-control" placeholder="Nombres ">
+                            <div *ngIf="personasForm.get('Nombres')?.hasError('required') && personasForm.get('Nombres')?.touched" class="form-text text-danger text-start">El nombre <strong>es Obligario</strong>.</div>
+                        </div>
+                        <div class="mb-3 ">
+                            <input type="text " formControlName="Apellidos" class="form-control " placeholder="Apellidos ">
+                            <div *ngIf="personasForm.get('Apellidos')?.hasError('required') && personasForm.get('Apellidos')?.touched" class="form-text text-danger text-start">El Apellido <strong>es Obligario</strong>.</div>
+                        </div>
+                        <div class="mb-3 ">
+                            <input type="number " formControlName="Telefono" class="form-control " placeholder="Telefono ">
+                            <div *ngIf="personasForm.get('Telefono')?.hasError('required') && personasForm.get('Telefono')?.touched" class="form-text text-danger text-start">El Telefono <strong>es Obligario</strong>.</div>
+                        </div>
+                        <div class="mb-3 ">
+                            <input type="email " formControlName="Correo" class="form-control " placeholder="Correo ">
+                            <div *ngIf="personasForm.get('Correo')?.hasError('required') && personasForm.get('Correo')?.touched" class="form-text text-danger text-start">El Correo <strong>es Obligario</strong>.</div>
+                        </div>
+                        <div class="mb-3 ">
+                            <input type="text " formControlName="Direccion" class="form-control " placeholder="Direccion ">
+                            <div *ngIf="personasForm.get('Direccion')?.hasError('required') && personasForm.get('Direccion')?.touched" class="form-text text-danger text-start">La Direccion <strong>es Obligario</strong>.</div>
+                        </div>
+                        <button class="btn btn-secondary m-2" routerLink="/">Volver</button>
+                        <button type="submit " [disabled]="personasForm.invalid" class="btn btn-primary ">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
